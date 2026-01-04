@@ -1,0 +1,8 @@
+BENIGN -> Class 0 (Counts: [10  0  0  0  0  0])
+Bot -> Class 0 (Counts: [1 0 0 0 0 0])
+DDoS -> Class 0 (Counts: [1 0 0 0 0 0])
+DoS Attack -> Class 0 (Counts: [3 0 0 0 1 0])
+PortScan -> Class 4 (Counts: [0 0 0 0 1 0])
+Web Attack � Brute Force -> Class 0 (Counts: [1 0 0 0 0 0])
+Web Attack � Sql Injection -> Class 3 (Counts: [0 0 0 1 0 0])
+Web Attack � XSS -> Class 0 (Counts: [1 0 0 0 0 0])
