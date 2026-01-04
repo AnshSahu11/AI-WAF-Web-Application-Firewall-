@@ -55,7 +55,11 @@ def load_models():
     try:
         # Models are in 'models/' directory based on current structure
         models["scaler"] = joblib.load("models/scaler.pkl")
-        models["iso"] = joblib.load("models/isolation_forest.pkl")
+        # Support compressed models for GitHub limit compliance
+        iso_path = "models/isolation_forest.pkl"
+        if not os.path.exists(iso_path) and os.path.exists(iso_path + ".gz"):
+            iso_path += ".gz"
+        models["iso"] = joblib.load(iso_path)
         models["xgb"] = joblib.load("models/xgboost.pkl")
         models["autoencoder"] = load_model("models/autoencoder.keras")
         
