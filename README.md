@@ -37,23 +37,13 @@ The models were trained using a subset of the **CIC-IDS-2017 / CIC-IDS-2018** da
 *   **Preprocessing**: Balanced sampling and standard scaling applied.
 
 ## How to Run the Project
-The application requires running the Backend and Frontend in separate terminals.
+**Option 1: Windows Batch Script**
+Simply double-click `run_app.bat` to install dependencies and launch the system.
 
-### Prerequisites
-```bash
-pip install -r requirements.txt
-```
-
-### Step 1: Start Backend (Terminal 1)
-```bash
-uvicorn api.app:app --port 8000
-```
-*Wait for "Application startup complete".*
-
-### Step 2: Start Frontend (Terminal 2)
-```bash
-streamlit run UI/waf_gui.py
-```
+**Option 2: Manual Terminal Commands**
+1.  **Install dependencies**: `pip install -r requirements.txt`
+2.  **Start Backend**: `uvicorn api.app:app --port 8000`
+3.  **Start Frontend**: `streamlit run UI/waf_gui.py`
 
 ## Results / Metrics
 *   **Detection Accuracy**: ~99% (Weighted F1-Score on Test Set).
@@ -62,8 +52,5 @@ streamlit run UI/waf_gui.py
 
 ## Innovation / Future Scope
 *   **Zero-Day Detection**: The Autoencoder component can flag never-before-seen attacks based on reconstruction error.
-*   **Explainable AI (XAI)**: Unlike black-box solutions, this WAF tells *why* a request was blocked (e.g., "High Packet Rate" or "Abnormal Bytes/s").
-*   **Future Scope**:
-    *   Integration with live NGINX/Apache logs.
-    *   Active learning loop (retraining on analyst feedback).
-    *   Deployment via Docker/Kubernetes.
+*   **Explainable AI (XAI)**: Unlike black-box solutions, this WAF tells *why* a request was blocked (e.g., "High Packet Rate").
+*   **Deployment**: Ready for containerization via Docker.

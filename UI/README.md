@@ -7,7 +7,7 @@ Security analysts are often overwhelmed by raw logs and black-box alerts. They l
 This directory contains the **Streamlit Frontend**, a lightweight, interactive dashboard designed for SecOps professionals. It connects to the backend API to provide:
 *   Real-time Traffic Simulation.
 *   Visual Risk Assessment (Speedometers/Gauges).
-*   Detailed Attack attribution & Explainability.
+*   Detailed Attack Attribution & Explainability.
 
 ## Architecture Diagram
 ```mermaid
@@ -19,9 +19,6 @@ graph TD
     Main --> Charts[Visualization/SHAP]
     Main --> Rules[Rule Logic]
 ```
-
-## ML Models Used
-**None directly.** This component is a pure client. It offloads all ML computation to the FastAPI backend. It purely visualizes the *outputs* of the models.
 
 ## Dataset Used
 *   `../data/test_samples_final.csv`: Used to populate the "Traffic Simulator" dropdown for testing purposes.
@@ -40,6 +37,3 @@ streamlit run UI/waf_gui.py
 ## Innovation / Future Scope
 *   **No-Code Interface**: Allows non-technical users to inspect ML model behavior.
 *   **Rule Engine**: Translates ML probability into human-readable action (BLOCK/ALLOW).
-*   **Future Scope**:
-    *   WebSocket integration for live log streaming.
-    *   One-click "Report False Positive" that updates the model.

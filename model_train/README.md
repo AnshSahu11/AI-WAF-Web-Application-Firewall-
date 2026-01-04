@@ -40,8 +40,5 @@ graph TD
 *   **Classification Report**: Precision, Recall, F1-Score for each attack class.
 
 ## Innovation / Future Scope
-*   **Hybrid Training**: Training unsupervised and supervised models on the same data split to ensure compatibility.
+*   **Hybrid Training**: Training unsupervised and supervised models on the same data split.
 *   **Class Weights**: "Balanced" weighting handling rare attack types.
-*   **Future Scope**:
-    *   Hyperparameter tuning via Optuna.
-    *   drift detection integration.

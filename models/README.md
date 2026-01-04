@@ -6,17 +6,15 @@ Training ML models is computationally expensive and slow. To enable real-time in
 ## Solution Overview
 This directory contains the **pickled (.pkl)** and **HDF5 (.keras)** files that represent the trained state of the Hybrid WAF engine. These are the "brains" of the system.
 
-## Architecture Diagram
-N/A - Storage for binaries.
-
 ## ML Models Used
 ### 1. `scaler.pkl`
 *   **Type**: `sklearn.preprocessing.StandardScaler`
 *   **Role**: Normalizes validation data to mean=0, std=1 (same as training data).
 
-### 2. `isolation_forest.pkl`
+### 2. `isolation_forest.pkl` (.gz)
 *   **Type**: `sklearn.ensemble.IsolationForest`
 *   **Role**: Anomaly Scoring (Outlier detection).
+*   **Note**: This file is compressed to bypass GitHub size limits.
 
 ### 3. `autoencoder.keras`
 *   **Type**: TensorFlow/Keras Functional Model
@@ -25,13 +23,6 @@ N/A - Storage for binaries.
 ### 4. `xgboost.pkl`
 *   **Type**: `xgboost.XGBClassifier`
 *   **Role**: Multi-class classification (Signature detection).
-
-## Dataset Used
-Trained on the data described in `../model_train/README.md`.
-
-## How to Run the Project
-These files are **read-only** by the `api/app.py`. do NOT edit them manually.
-To regenerate them, run the Training Pipeline in `../model_train/`.
 
 ## Results / Metrics
 See `../model_train/README.md` for the performance metrics of these specific binaries.
